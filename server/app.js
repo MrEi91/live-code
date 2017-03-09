@@ -10,8 +10,8 @@ mongoose.Promise = global.Promise
 const app = express()
 
 let index = require('./routes/index')
-let food = require('./routes/food')
-let rest = require('./routes/restaurant')
+// let food = require('./routes/food')
+// let rest = require('./routes/restaurant')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use('/api', index)
-app.use('/api/food', item)
-app.use('/api/rest', customer)
+// app.use('/api/food', food)
+// app.use('/api/rest', rest)
 
 app.listen(3000)
 
