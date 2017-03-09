@@ -47,9 +47,22 @@ let removeFood = (req, res, next) => {
   })
 }
 
+let findOneData = (req, rest, next) => {
+  food.findOne(req.query).then((data) => {
+    if (!data) {
+      res.send('Data is not found!')
+    } else {
+      res.send(data)
+    }
+  }).catch((e) => {
+    if (e) throw e
+  })
+}
+
 module.exports = {
   readFood,
   createFood,
   updateFood,
-  removeFood
+  removeFood,
+  findOneData
 }
