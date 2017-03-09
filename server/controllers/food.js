@@ -47,8 +47,8 @@ let removeFood = (req, res, next) => {
   })
 }
 
-let findOneData = (req, rest, next) => {
-  food.findOne(req.query).then((data) => {
+let findOneData = (req, res, next) => {
+  food.findById(req.params.id).then((data) => {
     if (!data) {
       res.send('Data is not found!')
     } else {

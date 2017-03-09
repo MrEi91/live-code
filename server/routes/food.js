@@ -5,7 +5,7 @@ const router = express.Router()
 const controller = require('../controllers/food')
 
 router.get('/', controller.readFood)
-router.get('/select'), controller.findOneData)
+router.get('/select/:id', controller.findOneData)
 router.post('/create', controller.createFood)
 router.put('/update/:id', controller.updateFood)
 router.delete('/delete/:id', controller.removeFood)
